@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+          function validar(){
+            $frutas = "";
+            if(this.form1.fruta_banana.checked){
+                $frutas = $frutas + " Banana "
+                
+            }
+
+            if(this.form1.fruta_manga.checked){
+                $frutas = $frutas + " Manga "
+                
+            }
+
+            if(this.form1.fruta_uva.checked){
+                $frutas = $frutas + " Uva "
+                
+            }
+
+            if(this.form1.fruta_maca.checked){
+                $frutas = $frutas + " Maça "
+                
+            }
+
+            if(this.form1.fruta_abacate.checked){
+                $frutas = $frutas + " Abacate "
+                
+            }
+
+            if(this.form1.fruta_pera.checked){
+                $frutas = $frutas + " Pêra "
+                
+            }
+            
+            alert($frutas)
+
+            $fCurso = this.form1.fcurso.value;
+            alert("Curso = " + $fCurso)
+
+            return false
+          }
+    </script>
+</head>
+
+<body>
+    <form name="form1" action="" method="post" onsubmit="return validar()">
+        Escolha uma fruta: <br>
+        <input type="checkbox" name="fruta_banana"> Banana <br>
+        <input type="checkbox" name="fruta_manga"> Manga <br>
+        <input type="checkbox" name="fruta_uva"> Uva <br>
+        <input type="checkbox" name="fruta_maca"> Maça <br>
+        <input type="checkbox" name="fruta_abacate"> Abacate <br>
+        <input type="checkbox" name="fruta_pera"> Pêra <br>
+
+        <input type="hidden" name="fcurso" value="DS">
+
+        <input type="submit" value="Gravar">
+
+    </form>
+
+
+
+
+</body>
+
+</html>
