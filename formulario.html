@@ -17,6 +17,7 @@
             $Curso = this.form1.fCurso.value
             $Prof1 = this.form1.fProf1.value
             $Prof2 = this.form1.fProf2.value
+            $periodo= this.form1.fperiodo.value
 
 
             $Resposta = "";
@@ -47,6 +48,7 @@
             $qtdcaractere_c = $Curso.length
             $qtdcaractere_p1 = $Prof1.length
             $qtdcaractere_p2 = $Prof2.length
+            $qtdcaractere_peri= $periodo.length
 
 
             if ($qtdcaractere_n < 1) {
@@ -72,6 +74,13 @@
                 return false
             }
 
+            if ($qtdcaractere_peri == "emBranco") {
+                alert("Por favor, selecione seu período")
+
+                return false
+            }
+
+
             if ($qtdcaractere_p1 < 1) {
                 alert("Por favor, digite o nome do docente")
                 return false
@@ -84,6 +93,8 @@
 
             else {
 
+
+
                 document.write("<center>")
                 document.write("<table border='1' width='700' height='300'>")
                 document.write("<td width='1'>")
@@ -95,6 +106,7 @@
                 document.write("Idade: " + $Idade + "<br>")
                 document.write("Sexo: " + $Sexo + "<br>")
                 document.write("Curso: " + $Curso + "<br>")
+                document.write("Período: " + $periodo + "<br>")
                 document.write("Professor 1: " + $Prof1 + "<br>")
                 document.write("Professor 2: " + $Prof2 + "<br>")
                 document.write("Diciplina que mais gosta: " + $Resposta + "<br>")
@@ -105,6 +117,7 @@
 
 
             }
+
 
         }
     </script>
@@ -145,6 +158,15 @@
                     <option value="Solda">Solda</option>
                 </select> <br>
                 <br>
+
+                <b>Período:</b> <select name="fperiodo">
+                    <option value="emBranco">Escolha uma opção abaixo: </option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select> <br>
+                <br>
+
 
                 <b>Professor 1:</b> <input type="text" name="fProf1"> <br>
                 <br>
