@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms2 vvv</title>
+    <script>
+
+        function validar() {
+
+
+
+            $Nome = this.form1.fNome.value
+            $Idade = this.form1.fIdade.value
+            $Sexo = this.form1.fSexo.value
+            $Curso = this.form1.fCurso.value
+            $Prof1 = this.form1.fProf1.value
+            $Prof2 = this.form1.fProf2.value
+
+            $Resposta = "";
+
+            if (this.form1.dicip_html.checked) {
+                $Resposta = $Resposta + " HTML"
+            }
+
+            if (this.form1.dicip_java.checked) {
+                $Resposta = $Resposta + " JavaScript"
+            }
+
+            if (this.form1.dicip_ard.checked) {
+                $Resposta = $Resposta + " Arduíno"
+            }
+
+            if (this.form1.dicip_log.checked) {
+                $Resposta = $Resposta + " Lógica de Programação"
+            }
+
+            if (this.form1.dicip_gest.checked) {
+                $Resposta = $Resposta + " Gestact"
+            }
+
+            document.write("<center>")
+            document.write("<table border='1' width='700' height='300'>")
+            document.write("<td width='1'>")
+            document.write("<font size = '5'>")
+            document.write("</center>")
+            document.write("<center>")
+            document.write("<b><font color='red'>Banco de dados:  <br></b></font>")
+            document.write("Nome: " + $Nome + "<br>")
+            document.write("Idade: " + $Idade + "<br>")
+            document.write("Sexo: " + $Sexo + "<br>")
+            document.write("Curso: " + $Curso + "<br>")
+            document.write("Professor 1: " + $Prof1 + "<br>")
+            document.write("Professor 2: " + $Prof2 + "<br>")
+            document.write("Diciplina que mais gosta: " + $Resposta + "<br>")
+            document.write("</td>")
+            document.write("</center>")
+
+
+            //alert("teste")
+
+            return false;
+
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <b>
+            <font size='7'>| BEM - VINDO! |</font>
+        </b>
+        <br><br>
+
+        <b>
+            <font size="6">
+                <font color='red'>| FORMULÁRIO |</font>
+            </font>
+        </b>
+        <br><br>
+
+
+        <font size='4'>
+            <form name="form1" action="" method="post" onsubmit="return validar()">
+                <b>Nome:</b> <input type="text" name="fNome"> <br>
+                <br>
+
+                <b>Idade:</b> <input type="text" name="fIdade"> <br>
+                <br>
+
+                <b>Sexo:</b>
+                Masculino <input type="radio" name="fSexo" value="Masculino">
+                Feminino <input type="radio" name="fSexo" value="Feminino">
+                <br><br>
+
+                <b>Curso:</b> <select name="fCurso">
+                    <option value="emBranco">Escolha uma opção abaixo: </option>
+                    <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+                    <option value="Mecânica">Mecânica</option>
+                    <option value="Solda">Solda</option>
+                </select> <br>
+                <br>
+
+                <b>Professor 1:</b> <input type="text" name="fProf1"> <br>
+                <br>
+
+                <b>Professor 2:</b> <input type="text" name="fProf2"> <br>
+                <br>
+
+
+
+                <b>Diciplina(s) que mais gosta:</b>
+                <br>
+                <input type="checkbox" name="dicip_html"> HTML <br>
+                <input type="checkbox" name="dicip_java"> JavaScript <br>
+                <input type="checkbox" name="dicip_ard"> Arduíno <br>
+                <input type="checkbox" name="dicip_log"> Lógica de Programação <br>
+                <input type="checkbox" name="dicip_gest"> Gestact <br>
+                <br>
+                <input type="submit" value="Acessar">
+                <input type="reset" value="Limpar">
+
+
+        </font>
+        </form>
+
+    </center>
+
+</body>
+
+</html>
