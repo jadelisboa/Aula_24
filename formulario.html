@@ -18,49 +18,93 @@
             $Prof1 = this.form1.fProf1.value
             $Prof2 = this.form1.fProf2.value
 
+
             $Resposta = "";
 
             if (this.form1.dicip_html.checked) {
-                $Resposta = $Resposta + " HTML"
+                $Resposta = "HTML"
             }
 
             if (this.form1.dicip_java.checked) {
-                $Resposta = $Resposta + " JavaScript"
+                $Resposta = " JavaScript"
             }
 
             if (this.form1.dicip_ard.checked) {
-                $Resposta = $Resposta + " Arduíno"
+                $Resposta = " Arduíno"
             }
 
             if (this.form1.dicip_log.checked) {
-                $Resposta = $Resposta + " Lógica de Programação"
+                $Resposta = " Lógica de Programação"
             }
 
             if (this.form1.dicip_gest.checked) {
-                $Resposta = $Resposta + " Gestact"
+                $Resposta = " Gestact"
             }
 
-            document.write("<center>")
-            document.write("<table border='1' width='700' height='300'>")
-            document.write("<td width='1'>")
-            document.write("<font size = '5'>")
-            document.write("</center>")
-            document.write("<center>")
-            document.write("<b><font color='red'>Banco de dados:  <br></b></font>")
-            document.write("Nome: " + $Nome + "<br>")
-            document.write("Idade: " + $Idade + "<br>")
-            document.write("Sexo: " + $Sexo + "<br>")
-            document.write("Curso: " + $Curso + "<br>")
-            document.write("Professor 1: " + $Prof1 + "<br>")
-            document.write("Professor 2: " + $Prof2 + "<br>")
-            document.write("Diciplina que mais gosta: " + $Resposta + "<br>")
-            document.write("</td>")
-            document.write("</center>")
+            $qtdcaractere_n = $Nome.length;
+            $qtdcaractere_i = $Idade.length
+            $qtdcaractere_s = $Sexo.length
+            $qtdcaractere_c = $Curso.length
+            $qtdcaractere_p1 = $Prof1.length
+            $qtdcaractere_p2 = $Prof2.length
 
 
-            //alert("teste")
+            if ($qtdcaractere_n < 1) {
+                alert("Por favor, digite seu nome")
 
-            return false;
+                return false
+            }
+
+            if ($qtdcaractere_i < 1) {
+                alert("Por favor, digite sua idade")
+                return false
+            }
+
+            if (($Sexo != "Masculino") && ($Sexo != "Feminino")) {
+                alert("Por favor, escolha seu sexo")
+
+                return false
+            }
+
+            if ($qtdcaractere_c == "emBranco") {
+                alert("Por favor, selecione seu curso")
+
+                return false
+            }
+
+            if ($qtdcaractere_p1 < 1) {
+                alert("Por favor, digite o nome do docente")
+                return false
+            }
+
+            if ($qtdcaractere_p2 < 1) {
+                alert("Por favor, digite o nome do docente")
+
+            }
+
+            else {
+
+                document.write("<center>")
+                document.write("<table border='1' width='700' height='300'>")
+                document.write("<td width='1'>")
+                document.write("<font size = '5'>")
+                document.write("</center>")
+                document.write("<center>")
+                document.write("<b><font color='red'>Banco de dados:  <br></b></font>")
+                document.write("Nome: " + $Nome + "<br>")
+                document.write("Idade: " + $Idade + "<br>")
+                document.write("Sexo: " + $Sexo + "<br>")
+                document.write("Curso: " + $Curso + "<br>")
+                document.write("Professor 1: " + $Prof1 + "<br>")
+                document.write("Professor 2: " + $Prof2 + "<br>")
+                document.write("Diciplina que mais gosta: " + $Resposta + "<br>")
+                document.write("</td>")
+                document.write("</font>")
+                document.write("</table>")
+                document.write("</center>")
+
+
+            }
 
         }
     </script>
@@ -112,11 +156,13 @@
 
                 <b>Diciplina(s) que mais gosta:</b>
                 <br>
-                <input type="checkbox" name="dicip_html"> HTML <br>
-                <input type="checkbox" name="dicip_java"> JavaScript <br>
-                <input type="checkbox" name="dicip_ard"> Arduíno <br>
-                <input type="checkbox" name="dicip_log"> Lógica de Programação <br>
-                <input type="checkbox" name="dicip_gest"> Gestact <br>
+
+                <input type="checkbox" name="dicip_html"> HTML </input> <br>
+                <input type="checkbox" name="dicip_java"> JavaScript </input> <br>
+                <input type="checkbox" name="dicip_ard"> Arduíno </input> <br>
+                <input type="checkbox" name="dicip_log"> Lógica de Programação </input> <br>
+                <input type="checkbox" name="dicip_gest"> Gestact </input> <br>
+
                 <br>
                 <input type="submit" value="Acessar">
                 <input type="reset" value="Limpar">
